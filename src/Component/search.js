@@ -1,7 +1,15 @@
 import React from "react";
+import styled from "styled-components";
 
-export const Search = ({ text, onChange }) => {
+const SearchStyles = styled.input`
+    width: 100%;
+
+`
+export const Search = ({ text, onChange, placeholder }) => {
     return (
-        <input onChange={onChange}>{text}</input>
+        <SearchStyles
+            onChange={onChange}
+            placeholder={placeholder}>{text}</SearchStyles>
+
     )
 }

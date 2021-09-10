@@ -5,17 +5,27 @@ const ListStyles = styled.ul`
      list-style: none;
      display: flex;
      gap : 20px;
+     div {
+         div {
+             display: flex;
+             gap : 15px;
+         }
+     }
  }
 
 `
-export const List = ({ name, mail, image }) => {
+export const List = ({ fistName, image, lastName, checked, onchange }) => {
     return (
         <ListStyles>
-            <li>
+            <li onChange={onchange}>
                 <img src={image}></img>
                 <div>
-                    <p>{name}</p>
-                    <a>{mail}</a>
+                    <div>
+                        <p>{fistName}</p>
+                        <p>{lastName}</p>
+                    </div>
+                    <input type="checkbox" id="item" name="item"
+                        checked={checked} />
                 </div>
             </li>
             <hr></hr>
